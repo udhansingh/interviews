@@ -1,0 +1,16 @@
+{
+  "a": 1,
+  "b": true,
+  "c.d": 3,
+  "c.e": "test",
+  "g.h.i": 100,
+  "g.h.j": 200,
+  "g.h.k.l": "Hello",
+  "g.z[0].dd": "Bingo",
+  "g.z[1].dd": "Dingo",
+  "v1": null,
+  "floats.f1": 200.99,
+  "floats.f2": 0.9,
+  "floats.f3": 5.0,
+  "floats.f4": 2340.9234
+}
