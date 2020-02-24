@@ -12,8 +12,8 @@ https://gist.github.com/doug-ol/0c018e82c095cd3addcb1275999c966f
 * Assuming source code direectory as current working directory
 
 * Use STDIN and STDOUT (default)
-    - cat ~/Downloads/input.json | java -jar ./target/mongodb_interviews-0.0.1-SNAPSHOT.jar
+    - cat ~/data/input.json | java -jar ./target/mongodb_interviews-0.0.1-SNAPSHOT.jar
 
 * Read input from file and Write output to file
-  java -jar ./target/mongodb_interviews-0.0.1-SNAPSHOT.jar --input=/tmp/input.json --output=/tmp/output.json
+  java -jar ./target/mongodb_interviews-0.0.1-SNAPSHOT.jar --input=${HOME}/data/input.json --output=${HOME}/data/output.json
 
