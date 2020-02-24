@@ -58,5 +58,5 @@ public interface RazerEngine {
 	 * Format output as per styles
 	 * @param styles list of styles to apply
 	 */
-	void style(Style ... styles);
+	void applyStyle(Style ... styles);
 }

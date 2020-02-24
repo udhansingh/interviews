@@ -41,7 +41,7 @@ public class RazerApplication implements ApplicationRunner {
 	}
 	
 	/**
-	 * Process arguments and run the flattening engine
+	 * Process arguments and run the flattening engine,
 	 */
 	@Override
     public void run(ApplicationArguments applicationArguments) throws Exception {
@@ -51,41 +51,43 @@ public class RazerApplication implements ApplicationRunner {
 		/*
 		 * Use a simple JSON parser
 		 */
-		final Razer parser = new SimpleRazer();
+		final Razer razer = new SimpleRazer();
 		
 		/*
 		 * Create instance of engine, 
+		 * 
+		 * TODO: Move this into a builder to make engine invocation better
 		 */
-		final RazerEngine razer = new SimpleRazerEngine();
+		final RazerEngine razerEngine = new SimpleRazerEngine();
 		
 		/*
 		 * Set parser
 		 */
-		razer.setParser(parser);
+		razerEngine.setParser(razer);
 		
 		/*
 		 * Read input from STDIN or a file
 		 */
 		try (final Reader reader = commandLineProcessor.getReader()) {
-			razer.readFrom(reader);
+			razerEngine.readFrom(reader);
 		}
 		
 		/*
 		 * Setup output style and formatting
 		 * 
 		 */
-		razer.style(Style.PRETTY, Style.INCLUDE_NULLS, Style.ALLOW_SPECIAL_DECIMALS);
+		razerEngine.applyStyle(Style.PRETTY, Style.INCLUDE_NULLS, Style.ALLOW_SPECIAL_DECIMALS);
 		
 		/*
 		 * Validate, Parse Content and Flatten
 		 */
-		razer.run();
+		razerEngine.run();
 		
 		/*
 		 * Write output to STDOUT or a file
 		 */
 		try (final Writer writer = commandLineProcessor.getWriter()) {
-			razer.writeTo(writer);
+			razerEngine.writeTo(writer);
 		}
     }
 }

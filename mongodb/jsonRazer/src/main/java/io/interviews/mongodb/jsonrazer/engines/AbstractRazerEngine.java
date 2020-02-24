@@ -38,7 +38,7 @@ public abstract class AbstractRazerEngine implements RazerEngine {
 	}
 
 	@Override
-	public void style(Style... styles) {
+	public void applyStyle(Style... styles) {
 		this.styles = Arrays.asList(styles);
 	}
 	

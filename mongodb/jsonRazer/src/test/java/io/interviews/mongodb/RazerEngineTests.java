@@ -72,7 +72,7 @@ public class RazerEngineTests extends AbstractTests {
 			razerEngine.readFrom(reader);
 		}
 		
-		razerEngine.style(Style.PRETTY, Style.INCLUDE_NULLS, Style.ALLOW_SPECIAL_DECIMALS);
+		razerEngine.applyStyle(Style.PRETTY, Style.INCLUDE_NULLS, Style.ALLOW_SPECIAL_DECIMALS);
 		
 		razerEngine.run();
 		
@@ -104,7 +104,7 @@ public class RazerEngineTests extends AbstractTests {
 			razerEngine.readFrom(reader);
 		}
 		
-		razerEngine.style(
+		razerEngine.applyStyle(
 			Style.PRETTY,
 			Style.INCLUDE_NULLS, 
 			Style.ALLOW_SPECIAL_DECIMALS, 
